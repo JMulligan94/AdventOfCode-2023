@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01-Trebuchet", "01-Trebuche
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02-CubeConundrum", "02-CubeConundrum\02-CubeConundrum.csproj", "{850369C3-015B-4674-9E0D-5E298D0B04AA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03-GearRatios", "03-GearRatios\03-GearRatios.csproj", "{D5CC9C75-0D9F-41AB-951F-CA3D7E797B88}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{850369C3-015B-4674-9E0D-5E298D0B04AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{850369C3-015B-4674-9E0D-5E298D0B04AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{850369C3-015B-4674-9E0D-5E298D0B04AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5CC9C75-0D9F-41AB-951F-CA3D7E797B88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5CC9C75-0D9F-41AB-951F-CA3D7E797B88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5CC9C75-0D9F-41AB-951F-CA3D7E797B88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5CC9C75-0D9F-41AB-951F-CA3D7E797B88}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
