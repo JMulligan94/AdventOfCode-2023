@@ -1,7 +1,4 @@
 ﻿
-using System.ComponentModel;
-using System.Diagnostics.CodeAnalysis;
-
 internal class Program
 {
     public static string GetGearId(int row, int col) => $"{col},{row}";
@@ -23,7 +20,6 @@ internal class Program
                 if (!char.IsDigit(rowLine[col]))
                     continue;
 
-                //Console.WriteLine($"Found start of possible part number at ({col},{row}): '{rowLine[col]}'");
                 var possiblePartString = rowLine[col].ToString();
                 var includedColumns = new List<int> { col };
                 col++;
@@ -34,64 +30,60 @@ internal class Program
                     col++;
                 }
 
-                // Console.WriteLine($"Full number at ({col},{row}) is: '{possiblePartString}'");
-                //Console.WriteLine($"Check row {row}, columns {string.Join(", ", includedColumns)} for neighbouring symbols");
-
                 // Is a part number if at least one digit has a symbol adjacent (including diagonally)
                 var isPartNumber = false;
 
                 foreach (var includedCol in includedColumns)
                 {
                     // North
-                    if (row > 0 && CheckCoords(lines, row-1, includedCol, possiblePartString, ref gears))
+                    if (CheckCoords(lines, row-1, includedCol, possiblePartString, ref gears))
                     {
                         isPartNumber = true;
                         break;
                     }
                     
                     // North East
-                    if (includedCol < rowLine.Length-1 && row > 0 && CheckCoords(lines, row-1, includedCol+1, possiblePartString, ref gears))
+                    if (CheckCoords(lines, row-1, includedCol+1, possiblePartString, ref gears))
                     {
                         isPartNumber = true;
                         break;
                     }
                     // East
-                    if (includedCol < rowLine.Length-1 && CheckCoords(lines, row, includedCol+1, possiblePartString, ref gears))
+                    if (CheckCoords(lines, row, includedCol+1, possiblePartString, ref gears))
                     {
                         isPartNumber = true;
                         break;
                     }
                     // South East
-                    if (includedCol < rowLine.Length-1 && row < lines.Count-1 && CheckCoords(lines, row+1, includedCol+1, possiblePartString, ref gears))
+                    if (CheckCoords(lines, row+1, includedCol+1, possiblePartString, ref gears))
                     {
                         isPartNumber = true;
                         break;
                     }
                     // South
-                    if (row < lines.Count-1 && CheckCoords(lines, row+1, includedCol, possiblePartString, ref gears))
+                    if (CheckCoords(lines, row+1, includedCol, possiblePartString, ref gears))
                     {
                         isPartNumber = true;
                         break;
                     }
                     // South West
-                    if (includedCol > 0 && row < lines.Count-1 && CheckCoords(lines, row+1, includedCol-1, possiblePartString, ref gears))
+                    if (CheckCoords(lines, row+1, includedCol-1, possiblePartString, ref gears))
                     {
                         isPartNumber = true;
                         break;
                     }
                     // West
-                    if (includedCol > 0 && CheckCoords(lines, row, includedCol-1, possiblePartString, ref gears))
+                    if (CheckCoords(lines, row, includedCol-1, possiblePartString, ref gears))
                     {
                         isPartNumber = true;
                         break;
                     }
                     // North West
-                    if (includedCol > 0 && row > 0 && CheckCoords(lines, row-1, includedCol-1, possiblePartString, ref gears))
+                    if (CheckCoords(lines, row-1, includedCol-1, possiblePartString, ref gears))
                     {
                         isPartNumber = true;
                         break;
                     }
-            
                 }
         
                 if (isPartNumber)
@@ -100,7 +92,6 @@ internal class Program
                     failedNumbers.Add(int.Parse(possiblePartString));
             }
         }
-
 
         Console.WriteLine("\n=== Part One ===");
         Console.WriteLine($"List of part numbers: {string.Join(", ", partNumbers)}");
@@ -114,11 +105,16 @@ internal class Program
         var gearRatios = validGears.Select(g => g.Value[0] * g.Value[1]).ToList();
         Console.WriteLine($"List of gear ratios: {string.Join(", ", gearRatios)}");
         Console.WriteLine($"\nSum of gear ratios: {gearRatios.Sum()}");
-
     }
 
     static bool CheckCoords(List<string> lines, int row, int col, string partString, ref Dictionary<string, List<int>> gears)
     {
+        if (row < 0 || row >= lines.Count)
+            return false;
+        
+        if (col < 0 || col >= lines[row].Length)
+            return false;
+        
         if (!IsSymbol(lines[row][col]))
             return false;
         
