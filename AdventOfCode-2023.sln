@@ -8,6 +8,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03-GearRatios", "03-GearRat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04-Scratchcards", "04-Scratchcards\04-Scratchcards.csproj", "{34286935-671A-49EA-8E26-B3B876C3F288}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05-SeedFertilizer", "05-SeedFertilizer\05-SeedFertilizer.csproj", "{74F4EB2D-4B85-48B9-8517-E3EC52A314C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06-WaitForIt", "06-WaitForIt\06-WaitForIt.csproj", "{99A77C5D-239C-45BA-823E-F5EDD8EDA50C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +34,13 @@ Global
 		{34286935-671A-49EA-8E26-B3B876C3F288}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34286935-671A-49EA-8E26-B3B876C3F288}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34286935-671A-49EA-8E26-B3B876C3F288}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74F4EB2D-4B85-48B9-8517-E3EC52A314C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74F4EB2D-4B85-48B9-8517-E3EC52A314C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74F4EB2D-4B85-48B9-8517-E3EC52A314C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74F4EB2D-4B85-48B9-8517-E3EC52A314C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99A77C5D-239C-45BA-823E-F5EDD8EDA50C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99A77C5D-239C-45BA-823E-F5EDD8EDA50C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99A77C5D-239C-45BA-823E-F5EDD8EDA50C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99A77C5D-239C-45BA-823E-F5EDD8EDA50C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
